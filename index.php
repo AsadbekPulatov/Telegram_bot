@@ -22,7 +22,7 @@ $text = $telegram->Text();
 
 if ($text == '/start'){
     $option = array(
-        array($telegram->buildKeyboardButton("🌍 Weather", false, true)),
+        array($telegram->buildKeyboardButton("🌍 Weather")),
         array($telegram->buildKeyboardButton("❤️ Love", true, false)),
     );
     $keyb = $telegram->buildKeyBoard($option, $onetime=true, $resize = true);
