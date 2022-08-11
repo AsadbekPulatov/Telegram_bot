@@ -4,7 +4,7 @@ include 'Telegram.php';
 $telegram = new Telegram('1210681190:AAFpNO1ochbktqThf4vewibUEESigM04oiA');
 $chat_id = $telegram->ChatID();
 $text = $telegram->Text();
-$f = 0;
+$f = '';
 if ($text == '/start') {
     $option = array(
         array($telegram->buildKeyboardButton("🌍 Weather")),
@@ -18,8 +18,8 @@ if ($text == '/start') {
 } else if ($text == "🌍 Weather") {
     $content = array('chat_id' => $chat_id, 'text' => "Qayerniki kerak");
     $telegram->sendMessage($content);
-    $f = 1;
-} else if ($f == 1){
+    $f = $text;
+} else if ($f == "🌍 Weather"){
     $q = $text;
     $key = "a85c63aee77341ee89b50718223004";
     $aqi = "yes";
