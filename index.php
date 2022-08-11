@@ -8,7 +8,9 @@ $aqi = "yes";
     $q = "Pitnak";
 $api_url = "http://api.weatherapi.com/v1/current.json?key=".$key."&aqi=".$aqi."&q=".$q;
 $data = json_decode(file_get_contents($api_url), true);
-echo $data;
+echo "<pre>";
+var_dump($data);
+echo "</pre>";
 include 'Telegram.php';
 
 $telegram = new Telegram('1210681190:AAFpNO1ochbktqThf4vewibUEESigM04oiA');
