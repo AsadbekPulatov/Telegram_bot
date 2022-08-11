@@ -18,8 +18,8 @@ if ($text == '/start') {
 } else if ($text == "🌍 Weather") {
     $content = array('chat_id' => $chat_id, 'text' => "Qayerniki kerak");
     $telegram->sendMessage($content);
-    $txt = new Telegram('1210681190:AAFpNO1ochbktqThf4vewibUEESigM04oiA');
-    $q = $txt->Text();
+} else {
+    $q = $text->Text();
     $key = "a85c63aee77341ee89b50718223004";
     $aqi = "yes";
     $api_url = "http://api.weatherapi.com/v1/current.json?key=" . $key . "&aqi=" . $aqi . "&q=" . $q;
@@ -27,4 +27,5 @@ if ($text == '/start') {
     $content = array('chat_id' => $chat_id, 'text' => "Harorat " . $data['current']['temp_c']);
     $telegram->sendMessage($content);
 }
+
 ?>
