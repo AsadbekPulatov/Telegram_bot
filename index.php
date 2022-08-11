@@ -10,8 +10,8 @@ $text = $telegram->Text();
 
 if ($text == '/start'){
     $option = array(
-        array($telegram->buildKeyboardButton("button1")),
-        array($telegram->buildKeyboardButton("button2", $request_contact = true)),
+        array($telegram->buildKeyboardButton("button1", false, true)),
+        array($telegram->buildKeyboardButton("button2", true, false)),
     );
     $keyb = $telegram->buildKeyBoard($option, $onetime=true, $resize = true);
     $content = array('chat_id' => $chat_id, 'text' => 'Assalomu alaykum. Botimizga xush kelibsiz!');
@@ -22,5 +22,4 @@ if ($text == '/start'){
 }
 //$content = array('chat_id' => $chat_id, 'text' => $text);
 //$telegram->sendMessage($content);
-// var_dump($content);
 ?>
