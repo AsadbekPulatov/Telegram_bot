@@ -8,9 +8,10 @@ $aqi = "yes";
     $q = "Pitnak";
 $api_url = "http://api.weatherapi.com/v1/current.json?key=".$key."&aqi=".$aqi."&q=".$q;
 $data = json_decode(file_get_contents($api_url), true);
-echo "<pre>";
-var_dump($data);
-echo "</pre>";
+//echo "<pre>";
+//var_dump($data);
+//echo "</pre>";
+//$data['current']['temp_c'];
 include 'Telegram.php';
 
 $telegram = new Telegram('1210681190:AAFpNO1ochbktqThf4vewibUEESigM04oiA');
@@ -21,8 +22,8 @@ $text = $telegram->Text();
 
 if ($text == '/start'){
     $option = array(
-        array($telegram->buildKeyboardButton("button1", false, true)),
-        array($telegram->buildKeyboardButton("button2", true, false)),
+        array($telegram->buildKeyboardButton("🌍 Weather", false, true)),
+        array($telegram->buildKeyboardButton("❤️ Love", true, false)),
     );
     $keyb = $telegram->buildKeyBoard($option, $onetime=true, $resize = true);
     $content = array('chat_id' => $chat_id, 'text' => 'Assalomu alaykum. Botimizga xush kelibsiz!');
@@ -30,7 +31,10 @@ if ($text == '/start'){
     $content = array('chat_id' => $chat_id, 'reply_markup' => $keyb ,'text' => 'Tugmalardan birini tanlang');
     $telegram->sendMessage($content);
 }
-
+else if ($text == "🌍 Weather"){
+    $content = array('chat_id' => $chat_id,'text' => "Harorat".$data['current']['temp_c']);
+    $telegram->sendMessage($content);
+}
 //$content = array('chat_id' => $chat_id, 'text' => $text);
 //$telegram->sendMessage($content);
 ?>
