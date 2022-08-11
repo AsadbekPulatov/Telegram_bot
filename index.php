@@ -45,7 +45,7 @@ function showWeather()
         " 💧 Humidity: " . $data['current']['humidity'] . "\n" .
         " 🕔 Time: " . $data['current']['last_updated'] . "\n";
     var_dump($show);
-    $content = array('chat_id' => $chat_id, 'text' => $show, 'parse_mode' => 'html');
+    $content = array('chat_id' => $chat_id, 'caption' => $show, 'parse_mode' => 'html', 'photo' => $data['current']['condition']['icon']);
     $telegram->sendMessage($content);
 }
 
