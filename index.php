@@ -37,7 +37,8 @@ function showWeather()
     $aqi = "yes";
     $api_url = "http://api.weatherapi.com/v1/current.json?key=" . $key . "&aqi=" . $aqi . "&q=" . $q;
     $data = json_decode(file_get_contents($api_url), true);
-    $show = " 📍 Name: " . $data['location']['name'] . "\n" .
+    $show = $data['current']['condition']['icon'].
+        " 📍 Name: " . $data['location']['name'] . "\n" .
         " 📍 Region: " . $data['location']['region'] . "\n" .
         " 📍 Country: " . $data['location']['country'] . "\n" .
         " 🌡 Temperature: " . $data['current']['temp_c'] . "\n" .
@@ -45,8 +46,8 @@ function showWeather()
         " 💧 Humidity: " . $data['current']['humidity'] . "\n" .
         " 🕔 Time: " . $data['current']['last_updated'] . "\n";
     var_dump($show);
-    $content = array('chat_id' => $chat_id, 'caption' => $show, 'parse_mode' => 'html', 'photo' => $data['current']['condition']['icon']);
-    $telegram->sendPhoto($content);
+    $content = array('chat_id' => $chat_id, 'caption' => $show, 'parse_mode' => 'html');
+    $telegram->sendMessage($content);
 }
 
 ?>
