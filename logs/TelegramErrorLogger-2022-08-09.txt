@@ -1,0 +1,38 @@
+============[Date]============
+[ 2022-08-09 15:33:07  Europe/Berlin ] 
+==========[Response]==========
+ok:			False
+error_code:		400
+description:		Bad Request: message text is empty
+=========[Sent Data]==========
+[ref]
+ref.chat_id= 
+ref.text= 
+
+
+============[Trace]===========
+#0 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Telegram.php(1797): TelegramErrorLogger::log(Array, Array)
+#1 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Telegram.php(119): Telegram->sendAPIRequest('https://api.tel...', Array)
+#2 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Telegram.php(177): Telegram->endpoint('sendMessage', Array)
+#3 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Bot.php(11): Telegram->sendMessage(Array)
+#4 {main}
+
+============[Date]============
+[ 2022-08-09 15:35:11  Europe/Berlin ] 
+==========[Response]==========
+ok:			False
+error_code:		400
+description:		Bad Request: message text is empty
+=========[Sent Data]==========
+[ref]
+ref.chat_id= 
+ref.text= 
+
+
+============[Trace]===========
+#0 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Telegram.php(1797): TelegramErrorLogger::log(Array, Array)
+#1 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Telegram.php(119): Telegram->sendAPIRequest('https://api.tel...', Array)
+#2 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Telegram.php(177): Telegram->endpoint('sendMessage', Array)
+#3 D:\xampp\htdocs\TelegramBot\PHP\BirinchiBot\Bot.php(11): Telegram->sendMessage(Array)
+#4 {main}
+
