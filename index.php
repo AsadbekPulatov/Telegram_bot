@@ -45,7 +45,7 @@ function showWeather()
             "🌪 Wind: ".$data['current']['wind_mph']."<br>.";
             "💧 Humidity: ".$data['current']['humidity']."<br>.";
             "🕔 Time: ".$data['current']['last_updated']."<br>";
-    $content = array('chat_id' => $chat_id, 'text' => $show);
+    $content = array('chat_id' => $chat_id, 'text' => $show, 'parse_mode' => 'html');
     $telegram->sendMessage($content);
 }
 
