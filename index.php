@@ -19,7 +19,7 @@ if ($text == '/start') {
     $content = array('chat_id' => $chat_id, 'text' => "Qayerniki kerak");
     $telegram->sendMessage($content);
     $f = $text;
-} else if ($f == "🌍 Weather"){
+} else {
     $q = $text;
     $key = "a85c63aee77341ee89b50718223004";
     $aqi = "yes";
