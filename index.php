@@ -46,7 +46,7 @@ function showWeather()
         " 🕔 Time: " . $data['current']['last_updated'] . "\n";
     var_dump($show);
     $content = array('chat_id' => $chat_id, 'caption' => $show, 'parse_mode' => 'html', 'photo' => $data['current']['condition']['icon']);
-    $telegram->sendMessage($content);
+    $telegram->sendPhoto($content);
 }
 
 ?>
