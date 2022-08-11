@@ -11,7 +11,7 @@ $text = $telegram->Text();
 if ($text == '/start'){
     $option = array(
         array($telegram->buildKeyboardButton("button1")),
-        array($telegram->buildKeyboardButton("button2")),
+        array($telegram->buildKeyboardButton("button2", $request_contact = true)),
     );
     $keyb = $telegram->buildKeyBoard($option, $onetime=true, $resize = true);
     $content = array('chat_id' => $chat_id, 'text' => 'Assalomu alaykum. Botimizga xush kelibsiz!');
