@@ -9,10 +9,18 @@ $chat_id = $telegram->ChatID();
 $text = $telegram->Text();
 
 if ($text == '/start'){
-    $content = array('chat_id' => $chat_id, 'text' => 'Assalomu alaykum botimizga xush kelibsiz!');
+    $option = array(
+        array($telegram->buildKeyboardButton("button1")),
+        array($telegram->buildKeyboardButton("button2")),
+    );
+    $keyb = $telegram->buildKeyBoard($option, $onetime=true, $resize = true);
+    $content = array('chat_id' => $chat_id, 'text' => 'Assalomu alaykum. Botimizga xush kelibsiz!');
     $telegram->sendMessage($content);
+    $content = array('chat_id' => $chat_id, 'reply_markup' => $keyb ,'text' => 'Tugmalardan birini tanlang');
+    $telegram->sendMessage($content);
+
 }
-$content = array('chat_id' => $chat_id, 'text' => $text);
-$telegram->sendMessage($content);
+//$content = array('chat_id' => $chat_id, 'text' => $text);
+//$telegram->sendMessage($content);
 // var_dump($content);
 ?>
