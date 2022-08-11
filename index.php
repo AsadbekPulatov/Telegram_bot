@@ -37,13 +37,13 @@ function showWeather()
     $aqi = "yes";
     $api_url = "http://api.weatherapi.com/v1/current.json?key=" . $key . "&aqi=" . $aqi . "&q=" . $q;
     $data = json_decode(file_get_contents($api_url), true);
-    $show = "<p> 📍 Name: " . $data['location']['name'] . "</p>" .
-        "<p> 📍 Region: " . $data['location']['region'] . "</p>" .
-        "<p> 📍 Country: " . $data['location']['country'] . "</p>" .
-        "<p> 🌡 Temperature: " . $data['current']['temp_c'] . "</p>" .
-        "<p> 🌪 Wind: " . $data['current']['wind_mph'] . "</p>" .
-        "<p> 💧 Humidity: " . $data['current']['humidity'] . "</p>" .
-        "<p> 🕔 Time: " . $data['current']['last_updated'] . "</p>";
+    $show = "<pre><b> 📍 Name: " . $data['location']['name'] . "</b>" .
+        "<b> 📍 Region: " . $data['location']['region'] . "</b>" .
+        "<b> 📍 Country: " . $data['location']['country'] . "</b>" .
+        "<b> 🌡 Temperature: " . $data['current']['temp_c'] . "</b>" .
+        "<b> 🌪 Wind: " . $data['current']['wind_mph'] . "</b>" .
+        "<b> 💧 Humidity: " . $data['current']['humidity'] . "</b>" .
+        "<b> 🕔 Time: " . $data['current']['last_updated'] . "</b></pre>";
     var_dump($show);
     $content = array('chat_id' => $chat_id, 'text' => $show, 'parse_mode' => 'html');
     $telegram->sendMessage($content);
