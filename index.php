@@ -8,8 +8,10 @@ $chat_id = $telegram->ChatID();
 //$chat_id = 1210681190;
 $text = $telegram->Text();
 
-if ($text == '/start')
+if ($text == '/start'){
     $content = array('chat_id' => $chat_id, 'text' => 'Assalomu alaykum botimizga xush kelibsiz!');
+    $telegram->sendMessage($content);
+}
 $content = array('chat_id' => $chat_id, 'text' => $text);
 $telegram->sendMessage($content);
 // var_dump($content);
