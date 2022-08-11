@@ -37,8 +37,7 @@ function showWeather()
     $aqi = "yes";
     $api_url = "http://api.weatherapi.com/v1/current.json?key=" . $key . "&aqi=" . $aqi . "&q=" . $q;
     $data = json_decode(file_get_contents($api_url), true);
-    $show = $data['current']['condition']['icon'] .
-        "<p> 📍 Name: " . $data['location']['name'] . "</p>" .
+    $show = "<p> 📍 Name: " . $data['location']['name'] . "</p>" .
         "<p> 📍 Region: " . $data['location']['region'] . "</p>" .
         "<p> 📍 Country: " . $data['location']['country'] . "</p>" .
         "<p> 🌡 Temperature: " . $data['current']['temp_c'] . "</p>" .
